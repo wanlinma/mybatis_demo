@@ -24,6 +24,7 @@ public class UserController {
     @GetMapping("one/{userId}")
     public ResponseEntity getUserById(@PathVariable("userId") Integer userId){
         List<User> user = userService.findUserById(userId);
+        sout
         return ResponseEntity.ok().body(user);
     }
 }
