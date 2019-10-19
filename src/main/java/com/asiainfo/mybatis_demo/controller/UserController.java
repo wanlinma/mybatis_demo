@@ -26,6 +26,7 @@ public class UserController {
         List<User> user = userService.findUserById(userId);
         System.out.println("我认为不行");
         System.out.println("我认为尚可");
+        System.out.println("我不这么认为");
         return ResponseEntity.ok().body(user);
     }
 }
