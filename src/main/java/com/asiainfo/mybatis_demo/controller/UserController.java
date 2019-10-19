@@ -24,7 +24,6 @@ public class UserController {
     @GetMapping("one/{userId}")
     public ResponseEntity getUserById(@PathVariable("userId") Integer userId){
         List<User> user = userService.findUserById(userId);
-        System.out.println("我认为不行");
         return ResponseEntity.ok().body(user);
     }
 }
