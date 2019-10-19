@@ -27,6 +27,7 @@ public class UserController {
         System.out.println("我认为不行");
         System.out.println("我认为尚可");
         System.out.println("我不这么认为");
+        System.out.println("真的可以吗");
         return ResponseEntity.ok().body(user);
     }
 }
