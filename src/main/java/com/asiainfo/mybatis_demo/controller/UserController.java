@@ -18,13 +18,12 @@ public class UserController {
     private UserService userService;
     @GetMapping("all")
     public ResponseEntity getAllUsers(){
-//        List<User> allUser = userService.findAllUser();
+        System.out.println("新添加");
         return ResponseEntity.ok().build();
     }
     @GetMapping("one/{userId}")
     public ResponseEntity getUserById(@PathVariable("userId") Integer userId){
         List<User> user = userService.findUserById(userId);
-        sout
         return ResponseEntity.ok().body(user);
     }
 }
