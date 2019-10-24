@@ -3,6 +3,8 @@ package com.asiainfo.mybatis_demo.service;
 import com.asiainfo.mybatis_demo.entity.User;
 import com.asiainfo.mybatis_demo.mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -23,4 +25,8 @@ public class UserService implements UserMapper {
     public List<User> findUserById(Integer id) {
         return userMapper.findUserById(id);
     }
+
+
+
+
 }

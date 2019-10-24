@@ -55,6 +55,12 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--邮件发送核心包-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -66,22 +72,22 @@
         </plugins>
 
     </build>
-<!--     如果将 xml  放入 java 目录，不放入 resources 目录，解决 IDEA不讲 java 目录下xml内容 加入 classpath-->
-<!--    <build>
-        <resources>
-            &lt;!&ndash; mapper.xml文件在java目录下 &ndash;&gt;
-            <resource>
-                <directory>src/main/java</directory>
-                <includes>
-                    <include>**/*.xml</include>
-                </includes>
-            </resource>
-            &lt;!&ndash; mapper.xml文件在resources目录下&ndash;&gt;
-            <&#45;&#45;<resource>
-            <directory>src/main/resources</directory>
-        </resource>&ndash;&gt;
-        </resources>
-    </build>-->
+    <!--     如果将 xml  放入 java 目录，不放入 resources 目录，解决 IDEA不讲 java 目录下xml内容 加入 classpath-->
+    <!--    <build>
+            <resources>
+                &lt;!&ndash; mapper.xml文件在java目录下 &ndash;&gt;
+                <resource>
+                    <directory>src/main/java</directory>
+                    <includes>
+                        <include>**/*.xml</include>
+                    </includes>
+                </resource>
+                &lt;!&ndash; mapper.xml文件在resources目录下&ndash;&gt;
+                <&#45;&#45;<resource>
+                <directory>src/main/resources</directory>
+            </resource>&ndash;&gt;
+            </resources>
+        </build>-->
 
 
 </project>

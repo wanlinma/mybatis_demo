@@ -10,14 +10,14 @@ import javax.servlet.http.HttpServletResponse;
 
 @Configuration
 public class AllInterceptor implements HandlerInterceptor {
+
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         System.out.println("进入所有路径拦截器，除了登录，注册，异常");
-
         // 扔出异常
         // 跳转错误界面
-        throw new UserPasswordNotMatchException();
-//        return false;
+//        throw new UserPasswordNotMatchException();
+        return true;
     }
 
     @Override
