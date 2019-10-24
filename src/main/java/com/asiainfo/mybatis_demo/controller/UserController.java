@@ -1,13 +1,11 @@
 package com.asiainfo.mybatis_demo.controller;
 
 import com.asiainfo.mybatis_demo.entity.User;
+import com.asiainfo.mybatis_demo.exception.UserPasswordNotMatchException;
 import com.asiainfo.mybatis_demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -26,4 +24,18 @@ public class UserController {
         List<User> user = userService.findUserById(userId);
         return ResponseEntity.ok().body(user);
     }
+
+    @GetMapping("/login")
+    public void login(){
+        throw new UserPasswordNotMatchException();
+    }
+
+    @PostMapping("error")
+    public ResponseEntity error(){
+        return ResponseEntity.ok().body("用户密码不匹配");
+    }
+
+
+
+
 }
