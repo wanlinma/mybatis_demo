@@ -1,11 +1,9 @@
 package com.asiainfo.mybatis_demo.config.security;
 
-import com.asiainfo.mybatis_demo.config.interceptor.AllInterceptor;
 import com.asiainfo.mybatis_demo.config.interceptor.SignInSignUpInterceptor;
 import com.asiainfo.mybatis_demo.config.interceptor.UserInterceptor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -13,7 +11,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class MvcConfigurer implements WebMvcConfigurer {
 
     /**
-     *  视频，图片匹配
+     * 视频，图片匹配
+     *
      * @param registry 过滤图片，视频的访问
      */
     @Override
@@ -26,19 +25,16 @@ public class MvcConfigurer implements WebMvcConfigurer {
 
         registry.addInterceptor(new UserInterceptor())
                 .addPathPatterns("/users/**")
-                .excludePathPatterns();
+                .excludePathPatterns()
+                .order(1);
 
         registry.addInterceptor(new SignInSignUpInterceptor())
                 .addPathPatterns("/sign/**")
                 .excludePathPatterns()
                 .order(2);
 
-        registry.addInterceptor(new AllInterceptor())
-                .addPathPatterns("/**")
-                .order(1);  // 最小的先开始拦截
 
     }
-
 
 
 }
