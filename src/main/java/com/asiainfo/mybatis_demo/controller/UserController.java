@@ -14,15 +14,16 @@ import java.util.List;
 public class UserController {
     @Autowired
     private UserService userService;
+
     @GetMapping("all")
     public ResponseEntity getAllUsers(){
-        System.out.println("新添加");
-        return ResponseEntity.ok().build();
+        List<User> allUser = userService.findAllUser();
+        return ResponseEntity.ok().body(allUser);
     }
     @GetMapping("one/{userId}")
     public ResponseEntity getUserById(@PathVariable("userId") Integer userId){
-        List<User> user = userService.findUserById(userId);
-        return ResponseEntity.ok().body(user);
+//        List<User> user = userService.findUserById(userId);
+        return ResponseEntity.ok().build();
     }
 
     @GetMapping("/login")

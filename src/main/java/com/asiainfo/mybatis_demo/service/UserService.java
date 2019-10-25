@@ -16,15 +16,18 @@ public class UserService implements UserMapper {
     @Autowired
     private UserMapper userMapper;
 
+    @Override
+    public List<User> findAllUser() {
+        return userMapper.findAllUser();
+    }
+
 //    @Override
-//    public List<User> findAllUser() {
-//        return userMapper.findAllUser();
+//    public List<User> findUserById(Integer id) {
+//        return userMapper.findUserById(id);
 //    }
 
-    @Override
-    public List<User> findUserById(Integer id) {
-        return userMapper.findUserById(id);
-    }
+
+
 
 
 
