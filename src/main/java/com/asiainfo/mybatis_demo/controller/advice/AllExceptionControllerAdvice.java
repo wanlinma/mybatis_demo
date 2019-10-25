@@ -15,6 +15,8 @@ public class AllExceptionControllerAdvice {
     @ExceptionHandler(value = Exception.class)
     @ResponseBody
     public ResponseEntity defaultError(HttpServletRequest request, HttpServletResponse response) {
+        // 这里可以进行错误判断，那种错误状态问题
+
         return ResponseEntity.status(404).body("页面为找到");
     }
 }
