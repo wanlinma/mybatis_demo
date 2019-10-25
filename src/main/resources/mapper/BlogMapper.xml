@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.asiainfo.mybatis_demo.mapper.BlogMapper">
+    <insert id="addBlog" parameterType="com.asiainfo.mybatis_demo.entity.Blog" useGeneratedKeys="true">
+        insert into tb_blog(blog_title,author_ref) values(#{blog.blogTitle},#{blog.authorRef})
+    </insert>
+</mapper>
