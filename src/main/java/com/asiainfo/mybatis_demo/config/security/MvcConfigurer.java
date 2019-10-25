@@ -14,18 +14,15 @@ public class MvcConfigurer implements WebMvcConfigurer {
 
     /**
      *  视频，图片匹配
-     * @param registry
+     * @param registry 过滤图片，视频的访问
      */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/imgs/**").addResourceLocations("file:D:/");  // 处理静态资源
+        registry.addResourceHandler("/imgs/**").addResourceLocations("file:d:/");  // 处理静态资源  ,前端这么写就行 <img src="http://localhost:8080/imgs/1.png"/>   数据库存图片是需要记录图片位置
     }
-
-
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-
 
         registry.addInterceptor(new UserInterceptor())
                 .addPathPatterns("/users/**")
